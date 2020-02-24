@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for fly in fly %}
+        <li>
+            <!-- <div class="#">    collapsible header             -->
+                    <div class="col s1">
+                    <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="col s2">
+                        <div class="inline_actions">
+                            <a href="{{url_for('delete_fly', fly_id=fly._id)}}"class="btn">Delete</a>
+                            <a href="{{url_for('edit_fly', task_id=fly._id)}}" class="btn">Edit</a>
+                        </div>  
+                    </div>
+                    <div class="task_header col s9">
+                        <strong>{{fly.name}}</strong>
+                    </div>
+            </div>
+
+            <div class="collapsible-body">
+                <span>
+                    Hook Size: {{fly.hook}} <br>
+                    Thread : {{fly.thread}} <br>
+                    Rib: {{fly.rib}} <br>
+                    Body: {{fly.body}} <br>
+                    Hackle: {{fly.hackle}} <br>
+                    Species: {{fly.species}}
+                    Link to Instructions: {{fly.link}}
+                </span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
