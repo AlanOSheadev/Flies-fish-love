@@ -29,7 +29,7 @@ def add_fly():
 
 @app.route('/insert_fly', methods=['POST'])
 def insert_fly():
-    fly = mongo.db.tasks
+    fly = mongo.db.fly
     fly.insert_one(request.form.to_dict())
     return redirect(url_for('get_fly'))
 

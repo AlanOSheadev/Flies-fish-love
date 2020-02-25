@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="input-field col s12"> <i class="fas fa-poll"></i>
 				<select id="species" name="species">
-					<option value="" disabled selected>Choose Fly</option>
+					<option value="" disabled selected>Choose target Species</option>
                     {% for spec in species %}
                         {% if spec.species == fly.species %}
                             <option value="{{spec.species}}" selected>{{spec.species}}</option>
@@ -54,7 +54,7 @@
         <div class="row">
 			<div class="input-field col s12"> <i class="fas fa-list"></i>
 				<textarea type="textarea" name="hackle" id="hackle" class="materialize-textarea" >{{fly.hackle}}</textarea>
-				<label for="icon_telephone">Hackle Suggested</label>
+				<label for="icon_telephone">Hackle</label>
 			</div>
         </div>
          <div class="row">
