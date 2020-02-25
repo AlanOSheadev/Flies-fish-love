@@ -22,7 +22,7 @@ def get_fly():
 
 
 @app.route('/add_fly')
-def add_task():
+def add_fly():
     return render_template('addfly.html',
     species=mongo.db.species.find())
 
