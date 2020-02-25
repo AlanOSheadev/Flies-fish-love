@@ -14,6 +14,7 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/get_fly')
 def get_fly():
@@ -35,16 +36,16 @@ def update_fly(fly_id):
         'hook': request.form.get('hook'),
         'thread': request.form.get('thread'),
         'rib': request.form.get('rib'),
-        'body': request.form.get('body')
-        'hackle': request.form.get('hackle')
-        'species': request.form.get('species')
+        'body': request.form.get('body'),
+        'hackle': request.form.get('hackle'),
+        'species': request.form.get('species'),
         'link': request.form.get('link')
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_fly'))
 
 @app.route('/delete_fly/<fly_id>')
 def delete_fly(fly_id):
-    mongo.db.fly.remove({'_id': ObjectId(task_id)})
+    mongo.db.fly.remove({'_id': ObjectId(fly_id)})
     return redirect(url_for('get_fly'))
 
 
