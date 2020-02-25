@@ -1,3 +1,13 @@
 .container-fluid {
     padding: 0;
 }
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.5);
+    border: solid #fff 3px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+

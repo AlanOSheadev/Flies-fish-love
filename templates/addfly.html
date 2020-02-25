@@ -6,21 +6,6 @@
 
 <div class="row">
 	<form action="{{ url_for('insert_fly', fly_id=fly._id) }}" method="POST" class="col 12">
-		<!-- <div class="row">
-			<div class="input-field col 12"> <i class="fas fa-poll"></i>
-				<select id="species" name="species">
-					<option value="" disabled selected>Choose target Species</option>
-                    {% for spec in species %}
-                        {% if spec.species == fly.species %}
-                            <option value="{{spec.species}}" selected>{{spec.species}}</option>
-                            {% else %}
-                            <option value="{{spec.species}}" >{{spec.species}}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-				<label>Fish Species</label>
-			</div>
-		</div> -->
 		<div class="row">
 			<div class="input-field col 12"><i class="fab fa-phoenix-framework"></i>
 				<input id="name" name="name" type="text" class="validate" value="{{fly.name}}">
