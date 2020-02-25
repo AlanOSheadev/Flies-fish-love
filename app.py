@@ -23,8 +23,7 @@ def get_fly():
 
 @app.route('/add_fly')
 def add_fly():
-    return render_template('addfly.html',
-    species=mongo.db.species.find())
+    return render_template('addfly.html', fly=mongo.db.fly.find())
 
 
 @app.route('/insert_fly', methods=['POST'])
@@ -38,8 +37,7 @@ def insert_fly():
 def edit_fly(fly_id):
     the_fly = mongo.db.fly.find_one({'_id': ObjectId(fly_id)})
     all_species = mongo.db.species.find()
-    return render_template('editfly.html', fly=the_fly,
-    species=all_species)    
+    return render_template('editfly.html', fly=the_fly, species=all_species)
 
 
 @app.route('/update.fly/<fly_id>', methods=['POST'])
