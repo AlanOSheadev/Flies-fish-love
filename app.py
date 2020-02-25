@@ -27,6 +27,21 @@ def add_fly():
     species=mongo.db.species.find())
 
 
+@app.route('/insert_fly', methods=['POST'])
+def insert_fly():
+    fly = mongo.db.tasks
+    fly.insert_one(request.form.to_dict())
+    return redirect(url_for('get_fly'))
+
+
+@app.route('/edit_fly/<fly_id>')
+def edit_fly(fly_id):
+    the_fly = mongo.db.fly.find_one({'_id': ObjectId(fly_id)})
+    all_species = mongo.db.species.find()
+    return render_template('editfly.html', fly=the_fly,
+    species=all_species)    
+
+
 @app.route('/update.fly/<fly_id>', methods=['POST'])
 def update_fly(fly_id):
     fly = mongo.db.fly
