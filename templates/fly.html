@@ -4,18 +4,18 @@
     <ul class="card" id="accordion">
         {% for fly in fly %}
         <li>
-            <div class="#">          
-                    <div class="col s1">
-                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-  <i class="fas fa-angle-down"></i></button>
+            <div class="inline">          
+                    <div class="col 1">
+                    <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <i class="far fa-envelope-open"></i></button>
                     </div>
-                    <div class="col s2">
+                    <div class="col 2">
                         <div class="inline">
                             <a href="{{url_for('delete_fly', fly_id=fly._id)}}" type="button" class="btn btn-primary">Delete</a>
                             <a href="{{url_for('edit_fly', fly_id=fly._id)}}" type="button" class="btn btn-success">Edit</a>
                         </div>  
                     </div>
-                    <div class="task_header col s9">
+                    <div class="task_header col 9">
                         <strong>{{fly.name}}</strong>
                     </div>
             </div>
