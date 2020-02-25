@@ -11,6 +11,27 @@
 
 <body>
 <header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="/assets/images/logow.png" width="50" height="38" alt=""><strong>Sponsored by Rodfendr</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-nav-fluid ml-auto">
+                    <li class="nav-item acive">
+                        <a class="nav-link btn btn-info" href="{{url_for('#')}}"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <li><a class="btn btn-info" href="{{url_for('#')}}">Add New Fly</a></li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-info" href="contact.html"><i class="fa fa-comment-o" aria-hidden="true"></i> Contact Us</a>
+                    </li>
+                    <li class="nav-item"><a href="https://rodfendr.com/collections/rodfendr/products/rodfendr" target="_blank" class="btn btn-info"><i class="fa fa-credit-card" style="color: orange" aria-hidden="true"></i> Buy Now</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     <nav>
     <div class="nav-wrapper">
       <a href="{{url_for('get_tasks')}}" class="brand-logo">Fly Manager</a>
@@ -26,6 +47,34 @@
     <div class="container">
         {% block content %} {% endblock %}
     </div>
+<footer class="container-fluid">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active btn-info" href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-info" href="privacy.html"><i class="fa fa-balance-scale" aria-hidden="true"></i> Privacy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-info" href="https://business.facebook.com/Rodfendr/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-info" href="https://www.instagram.com/rodfendr_fishing_tackle/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-info" href="https://twitter.com/rodfendr" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-info" href="https://www.pinterest.ie/alanosheaclash/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-info" href="https://www.linkedin.com/in/alan-o-shea-/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://rodfendr.com/collections/rodfendr/products/rodfendr" target="_blank" class="btn-info"><i class="fa fa-credit-card" style="color: orange" aria-hidden="true"></i> Buy Now</a>
+                </li>
+            </ul>
+        </footer>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript">
@@ -33,19 +82,6 @@
             $('.collapsible').collapsible();
             $('select').material_select();
             $(".button-collapse").sideNav();
-        });
-
-         $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
-        });
-
-        document.getElementById("matfix").addEventListener("click", function(e) {
-	    e.stopPropagation();
         });
     </script>
 </body>

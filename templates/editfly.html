@@ -7,7 +7,7 @@
 <div class="row">
 	<form action="{{ url_for('update_fly', fly_id=fly._id) }}" method="POST" class="col s12">
 		<div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">poll</i>
+			<div class="input-field col s12"> <i class="fas fa-poll"></i>
 				<select id="species" name="species">
 					<option value="" disabled selected>Choose Fly</option>
                     {% for spec in species %}
@@ -18,59 +18,53 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-				<label>Fly Species</label>
+				<label>Fish Species</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">assignment</i>
+			<div class="input-field col s12"><i class="fab fa-phoenix-framework"></i>
 				<input id="name" name="name" type="text" class="validate" value="{{fly.name}}">
 				<label for="icon_prefix">Fly Name</label>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
+			<div class="input-field col s12"> <i class="fas fa-list"></i>
 				<textarea type="textarea" name="hook" id="hook" class="materialize-textarea" >{{fly.hook}}</textarea>
 				<label for="icon_telephone">Hook Size(s)</label>
 			</div>
 		</div>
         <div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
+			<div class="input-field col s12"> <i class="fas fa-list"></i>
 				<textarea type="textarea" name="thread" id="thread" class="materialize-textarea" >{{fly.thread}}</textarea>
 				<label for="icon_telephone">Thread Colour</label>
 			</div>
         </div>
         <div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
+			<div class="input-field col s12"><i class="fas fa-list"></i>
 				<textarea type="textarea" name="rib" id="rib" class="materialize-textarea" >{{fly.rib}}</textarea>
 				<label for="icon_telephone">Rib Used</label>
 		    </div>
         </div>
         <div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
+			<div class="input-field col s12"> <i class="fas fa-list"></i>
 				<textarea type="textarea" name="body" id="body" class="materialize-textarea" >{{fly.body}}</textarea>
 				<label for="icon_telephone">Body Material</label>
 			</div>
         </div>
         <div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
+			<div class="input-field col s12"> <i class="fas fa-list"></i>
 				<textarea type="textarea" name="hackle" id="hackle" class="materialize-textarea" >{{fly.hackle}}</textarea>
 				<label for="icon_telephone">Hackle Suggested</label>
 			</div>
         </div>
-        <div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
-				<textarea type="textarea" name="species" id="species" class="materialize-textarea" >{{fly.species}}</textarea>
-				<label for="icon_telephone">Species it Targets</label>
-			</div>
-	    </div>
          <div class="row">
-			<div class="input-field col s12"> <i class="material-icons prefix">subject</i>
+			<div class="input-field col s12"> <i class="fas fa-list"></i>
 				<textarea type="textarea" name="link" id="link" class="materialize-textarea" >{{fly.link}}</textarea>
 				<label for="icon_telephone">Link to Instructions</label>
 			</div>
 	    </div>	
 		<div class="row">
-			<button class="btn waves-effect waves-light" type="submit" name="action">Edit Fly<i class="material-icons right">playlist_add</i>
+			<button class="btn waves-effect waves-light" type="submit" name="action">Edit Fly<i class="fas fa-plus"></i>
 			</button>
 		</div>
 	</form>
