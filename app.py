@@ -43,6 +43,7 @@ def update_fly(fly_id):
     })
     return redirect(url_for('get_fly'))
 
+
 @app.route('/delete_fly/<fly_id>')
 def delete_fly(fly_id):
     mongo.db.fly.remove({'_id': ObjectId(fly_id)})
@@ -51,4 +52,4 @@ def delete_fly(fly_id):
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')), debug=True) # remember to change to false before final push to Heroku
+            port=int(os.environ.get('PORT')), debug=True)  # remember to change to false before final push to Heroku
