@@ -71,9 +71,9 @@ def add_privacy():
     return render_template('privacy.html')
 
 
-@app.route('/add_contact')
-def add_contact():
-    return render_template('contact.html')
+# @app.route('/add_contact')
+# def add_contact():
+#     return render_template('contact.html')
 
 
 if __name__ == '__main__':
