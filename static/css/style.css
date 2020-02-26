@@ -22,16 +22,20 @@ ul li {
 	margin: 0;
 	padding: 0;
 	color: #fafafa;
-	background: url("static/image/trout.jpg") rgba(0, 0, 0, 0.5);
+	background: url("../image/trout.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 50vh;
+	height: 60vh;
 	transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-webkit-transition: all .5s ease-in-out;
-	-moz-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 0 10px;
+	-webkit-box-shadow: 0 0 0 10px;
+	box-shadow: 0 0 0 10px;
 	z-index: -1;
+}
+
+.container, .container-md, .container-sm {
+    max-width: 100%;
 }
