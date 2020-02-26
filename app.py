@@ -66,8 +66,14 @@ def delete_fly(fly_id):
     return redirect(url_for('get_fly'))
 
 
-# @app.route('/goto_privacy')
-#     return render_template(privacy.html)
+@app.route('/add_privacy')
+def add_privacy():
+    return render_template('privacy.html')
+
+
+@app.route('/add_contact')
+def add_contact():
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':
