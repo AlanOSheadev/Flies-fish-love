@@ -6,56 +6,72 @@
 
 <div class="row">
 	<form action="{{ url_for('insert_fly', fly_id=fly._id) }}" method="POST" class="col 12">
+    <!-- <div class="input-field col 12"> <i class="fas fa-list"></i>
+				<select id="species" name="species">
+					<option value="" disabled selected>Choose target Species</option>
+                    {% for spec in species %}
+                        {% if spec.species == fly.species %}
+                            <option value="{{spec.species}}" >{{spec.species}}</option>
+                            {% else %}
+                            <option value="{{spec.species}}" >{{spec.species}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+				<label>Fish Species</label>
+			</div> -->
+        <div class="row">
+            <div class="input-field col 12"> <i class="fa fa-list"></i>
+				<textarea type="text" name="species" id="species">{{fly.species}}</textarea>
+				<label>Taget Fish?</label>
+		    </div>
+        </div>
 		<div class="row">
-			<div class="input-field col 12"><i class="fab fa-phoenix-framework"></i>
-				<input id="name" name="name" type="text" class="validate" value="{{fly.name}}">
+			<div class="input-field col 12"><i class="fa fa-upload" aria-hidden="true"></i>
+				<textarea type="name" name="name" id="name">{{fly.name}}</textarea>
 				<label>Fly Name</label>
 			</div>
 		</div>
         <div class="row">
-			<div class="input-field col 12"> <i class="fas fa-list"></i>
-				<textarea type="text" name="species" id="species">{{fly.species}}</textarea>
-				<label>Taget Fish?</label>
-			</div>
+			
 		</div>
 		<div class="row">
-			<div class="input-field col 12"> <i class="fas fa-list"></i>
-				<textarea type="text" name="hook" id="hook" class="materialize-textarea" >{{fly.hook}}</textarea>
+			<div class="input-field col 12"> <i class="fa fa-anchor" aria-hidden="true"></i>
+				<textarea type="text" name="hook" id="hook">{{fly.hook}}</textarea>
 				<label>Hook Size(s)</label>
 			</div>
 		</div>
         <div class="row">
-			<div class="input-field col 12"> <i class="fas fa-list"></i>
+			<div class="input-field col 12"><i class="fa fa-tint" aria-hidden="true"></i>
 				<textarea type="text" name="thread" id="thread">{{fly.thread}}</textarea>
 				<label>Thread Colour</label>
 			</div>
         </div>
         <div class="row">
-			<div class="input-field col 12"><i class="fas fa-list"></i>
+			<div class="input-field col 12"><i class="fa fa-bolt" aria-hidden="true"></i>
 				<textarea type="text" name="rib" id="rib"  >{{fly.rib}}</textarea>
 				<label>Rib Used</label>
 		    </div>
         </div>
         <div class="row">
-			<div class="input-field col 12"> <i class="fas fa-list"></i>
+			<div class="input-field col 12"> <i class="fa fa-female" aria-hidden="true"></i>
 				<textarea type="text" name="body" id="body">{{fly.body}}</textarea>
 				<label>Body Material</label>
 			</div>
         </div>
         <div class="row">
-			<div class="input-field col 12"> <i class="fas fa-list"></i>
+			<div class="input-field col 12"> <i class="fa fa-envira" aria-hidden="true"></i>
 				<textarea type="text" name="hackle" id="hackle">{{fly.hackle}}</textarea>
 				<label>Hackle Suggested</label>
 			</div>
         </div>
          <div class="row">
-			<div class="input-field col 12"> <i class="fas fa-list"></i>
+			<div class="input-field col 12"> <i class="fa fa-link" aria-hidden="true"></i>
 				<textarea type="text" name="link" id="link">{{fly.link}}</textarea>
 				<label>Link to Instructions</label>
 			</div>
 	    </div>	
 		<div class="row">
-			<button class="btn btn-success" type="submit" name="action">Add this Fly<i class="fas fa-plus"></i>
+			<button class="btn btn-success" type="submit" name="action">Add this Fly  <i class="fa fa-plus"></i>
 			</button>
 		</div>
 	</form>
