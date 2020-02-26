@@ -49,7 +49,10 @@ def update_fly(fly_id):
         'hook': request.form.get('hook'),
         'thread': request.form.get('thread'),
         'rib': request.form.get('rib'),
+        'head': request.form.get('head'),
         'body': request.form.get('body'),
+        'thorax': request.form.get('thorax'),
+        'legs': request.form.get('legs'),
         'hackle': request.form.get('hackle'),
         'species': request.form.get('species'),
         'link': request.form.get('link')

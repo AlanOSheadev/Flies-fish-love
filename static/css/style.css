@@ -11,3 +11,6 @@
     color: #ffffff;
 }
 
+ul li {
+  list-style-type: none;
+}
