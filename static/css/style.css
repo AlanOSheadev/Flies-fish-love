@@ -14,3 +14,24 @@
 ul li {
   list-style-type: none;
 }
+
+.hero {
+	text-align: center;
+	justify-items: center;
+	margin-top: 60px;
+	margin: 0;
+	padding: 0;
+	color: #fafafa;
+	background: url("static/image/trout.jpg") rgba(0, 0, 0, 0.5);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 50vh;
+	transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
+	z-index: -1;
+}

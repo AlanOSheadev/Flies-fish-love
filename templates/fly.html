@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 {% block content %}
+    <div class="hero"></div>
     <ul class="card" id="accordion">
         {% for fly in fly %}
         <li>
@@ -9,7 +10,7 @@
                     <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button>
                     </div>
                     <div class="task_header col 9  list-inline-item">
-                        <strong><i class="fa fa-bug" aria-hidden="true"></i> Name of Fly : {{fly.name}}</strong>
+                        <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
                     </div>
                     <div class="col 2">
                         <div>
