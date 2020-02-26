@@ -66,6 +66,10 @@ def delete_fly(fly_id):
     return redirect(url_for('get_fly'))
 
 
+# @app.route('/goto_privacy')
+#     return render_template(privacy.html)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')), debug=True)  # remember to change to false before final push to Heroku
