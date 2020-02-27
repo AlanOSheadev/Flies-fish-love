@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename ='css/style.css')}}" type="text/css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_nuiaBSpjXouOL9kdznLW2");
+        })();
+    </script>
     <title>Flies Fish Love</title>
 </head>
 
@@ -73,6 +79,7 @@
             $(".button-collapse").sideNav();
         });
     </script>
+    <script src="assets/js/sendemail.js"></script>
 </body>
 
 </html>
