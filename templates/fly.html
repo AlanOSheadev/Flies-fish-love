@@ -8,7 +8,7 @@
                 <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
             </div>
             <div class="col 1  list-inline-item">
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
+                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
             </div>
             <div class="col 2">
                 <div>
@@ -17,8 +17,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="collapse card card-body" id="collapseExample">
+        <div class="collapse card card-body" id="collapseExample{{loop.index}}"> 
             <span>
                     Hook Size: {{fly.hook}} <br>
                     Thread : {{fly.thread}} <br>
@@ -29,7 +28,7 @@
                     Link to Instructions: {{fly.link}}
                 </span>
         </div>
-    </li>
+    </li>    
     {% endfor %}
 </ul>
 {% endblock %}
