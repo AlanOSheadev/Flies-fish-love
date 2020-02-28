@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_fly')
 def get_fly():
-    return render_template("fly.html", fly=mongo.db.fly.find())
+    return render_template("fly.html", fly=mongo.db.fly.find().sort("name"))
 
 
 @app.route('/add_fly')

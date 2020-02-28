@@ -52,3 +52,7 @@ ul li {
 .container, .container-md, .container-sm {
     max-width: 100%;
 }
+
+.col {
+    padding: 0;
+}
