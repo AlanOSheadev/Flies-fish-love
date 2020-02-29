@@ -72,7 +72,7 @@ def edit_fly(fly_id):
 @app.route('/update.fly/<fly_id>', methods=['POST'])
 def update_fly(fly_id):
     fly = mongo.db.fly
-    fly.update({'_id': ObjectId(fly_id)}, {request.form.to_dict()})
+    fly.update(request.form.to_dict())
     return redirect(url_for('get_fly'))
 
 
