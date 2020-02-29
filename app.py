@@ -57,7 +57,7 @@ def update_fly(fly_id):
         'tail': request.form.get('tail'),
         'hackle': request.form.get('hackle'),
         'species': request.form.get('species'),
-        'link': request.form.get('link')
+        'link': request.form.get('link'),
     })
     return redirect(url_for('get_fly'))
 
