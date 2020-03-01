@@ -72,7 +72,22 @@ def edit_fly(fly_id):
 @app.route('/update.fly/<fly_id>', methods=['POST'])
 def update_fly(fly_id):
     fly = mongo.db.fly
-    fly.update(request.form.to_dict())
+    fly.update({'_id': ObjectId(fly_id)}, {
+      'name': request.form.get('name'),
+      'species': request.form.get('species'),
+        'hook': request.form.get('hook'),
+        'thread': request.form.get('thread'),
+        'rib': request.form.get('rib'),
+        'head': request.form.get('head'),
+        'body': request.form.get('body'),
+        'thorax': request.form.get('thorax'),
+        'legs': request.form.get('legs'),
+        'wings': request.form.get('wings'),
+        'tail': request.form.get('tail'),
+        'hackle': request.form.get('hackle'),
+        'link': request.form.get('link'),
+        'delete': True
+    })
     return redirect(url_for('get_fly'))
 
 
@@ -86,6 +101,7 @@ def insert_fly():
     fly = mongo.db.fly
     fly.insert({
         'name': request.form.get('name'),
+        'species': request.form.get('species'),
         'hook': request.form.get('hook'),
         'thread': request.form.get('thread'),
         'rib': request.form.get('rib'),
@@ -96,7 +112,6 @@ def insert_fly():
         'wings': request.form.get('wings'),
         'tail': request.form.get('tail'),
         'hackle': request.form.get('hackle'),
-        'species': request.form.get('species'),
         'link': request.form.get('link'),
         'delete': True
     })
