@@ -24,8 +24,8 @@
         </div>
         <div class="collapse card card-body" id="collapseExample{{loop.index}}"> 
             <span>
-                    Hook Size : &nbsp;{{fly.hook}} <br>
                     Species : &nbsp;&nbsp;&ensp;{{fly.species}} <br>
+                    Hook Size : &nbsp;{{fly.hook}} <br>
                     Thread : &ensp;&emsp;{{fly.thread}} <br>
                     Rib : &ensp;&emsp;&emsp;&emsp;{{fly.rib}} <br>
                     Head : &ensp;&emsp;&emsp;{{fly.head}} <br>
@@ -41,4 +41,5 @@
     </li>    
     {% endfor %}
 </ul>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}

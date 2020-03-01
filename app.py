@@ -73,8 +73,8 @@ def edit_fly(fly_id):
 def update_fly(fly_id):
     fly = mongo.db.fly
     fly.update({'_id': ObjectId(fly_id)}, {
-      'name': request.form.get('name'),
-      'species': request.form.get('species'),
+        'name': request.form.get('name'),
+        'species': request.form.get('species'),
         'hook': request.form.get('hook'),
         'thread': request.form.get('thread'),
         'rib': request.form.get('rib'),
