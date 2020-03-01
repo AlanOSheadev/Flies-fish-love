@@ -86,6 +86,7 @@ def update_fly(fly_id):
         'tail': request.form.get('tail'),
         'hackle': request.form.get('hackle'),
         'link': request.form.get('link'),
+        'submitted_by': request.form.get('submitted_by'),
         'delete': True
     })
     return redirect(url_for('get_fly'))
@@ -113,6 +114,7 @@ def insert_fly():
         'tail': request.form.get('tail'),
         'hackle': request.form.get('hackle'),
         'link': request.form.get('link'),
+        'submitted_by': request.form.get('submitted_by'),
         'delete': True
     })
     return redirect(url_for('get_fly'))
