@@ -1,17 +1,22 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div>
+<div class="row">
+    <div class="col-3"></div>
+    <button class="col-6"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    <div class="col-3"></div>
+</div>
 <ul class="card" id="accordion">
     {% for fly in fly %}
     <li>
         <div class="row list-inline">
-            <div class="task_header col 9  list-inline-item">
-                <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
-            </div>
-    
-            <div class="col 1  list-inline-item">
+            <div class="col-3 list-inline-item">
                 <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
             </div>
-            <div class="col 2">
+            <div class="col-2"></div>
+            <div class="task_header col-4  list-inline-item align-self-center">
+                <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
+            </div>
+            <div class="col">
                 <div>
                 {% if fly.delete %}
                     <a href="{{url_for('edit_fly', fly_id=fly._id)}}" type="button" class="btn btn-primary">Edit</a>

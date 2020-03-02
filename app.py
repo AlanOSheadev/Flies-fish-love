@@ -46,6 +46,7 @@ def get_fly():
 #     fly.update({'_id': ObjectId(fly_id)},
 #     {
 #         'name': request.form.get('name'),
+#         'species': request.form.get('species'),
 #         'hook': request.form.get('hook'),
 #         'thread': request.form.get('thread'),
 #         'rib': request.form.get('rib'),
@@ -56,8 +57,9 @@ def get_fly():
 #         'wings': request.form.get('wings'),
 #         'tail': request.form.get('tail'),
 #         'hackle': request.form.get('hackle'),
-#         'species': request.form.get('species'),
 #         'link': request.form.get('link'),
+#         'submitted_by': request.form.get('submitted_by'),
+#         'delete': True
 #     })
 #     return redirect(url_for('get_fly'))
 
