@@ -21,47 +21,17 @@ def get_fly():
     return render_template("fly.html", fly=mongo.db.fly.find().sort("name"))
 
 
-# @app.route('/add_fly')
-# def add_fly():
-#     return render_template('addfly.html', fly=mongo.db.fly.find())
+@app.route('/add_fly')
+def add_fly():
+    return render_template('addfly.html', fly=mongo.db.fly.find())
 
 
-# @app.route('/insert_fly', methods=['POST'])
-# def insert_fly():
-#     fly = mongo.db.fly
-#     fly.insert_one(request.form.to_dict())
-#     return redirect(url_for('get_fly'))
-
-
-# @app.route('/edit_fly/<fly_id>')
-# def edit_fly(fly_id):
-#     the_fly = mongo.db.fly.find_one({'_id': ObjectId(fly_id)})
-#     all_species = mongo.db.species.find()
-#     return render_template('editfly.html', fly=the_fly, species=all_species)
-
-
-# @app.route('/update.fly/<fly_id>', methods=['POST'])
-# def update_fly(fly_id):
-#     fly = mongo.db.fly
-#     fly.update({'_id': ObjectId(fly_id)},
-#     {
-#         'name': request.form.get('name'),
-#         'species': request.form.get('species'),
-#         'hook': request.form.get('hook'),
-#         'thread': request.form.get('thread'),
-#         'rib': request.form.get('rib'),
-#         'head': request.form.get('head'),
-#         'body': request.form.get('body'),
-#         'thorax': request.form.get('thorax'),
-#         'legs': request.form.get('legs'),
-#         'wings': request.form.get('wings'),
-#         'tail': request.form.get('tail'),
-#         'hackle': request.form.get('hackle'),
-#         'link': request.form.get('link'),
-#         'submitted_by': request.form.get('submitted_by'),
-#         'delete': True
-#     })
-#     return redirect(url_for('get_fly'))
+@app.route('/insert_fly', methods=['POST'])
+def insert_fly():
+    fly = mongo.db.fly
+    species = mongo.db.species
+    fly.insert_one(request.form.to_dict())
+    return redirect(url_for('get_fly'))
 
 
 @app.route('/edit_fly/<fly_id>')
@@ -75,34 +45,6 @@ def edit_fly(fly_id):
 def update_fly(fly_id):
     fly = mongo.db.fly
     fly.update({'_id': ObjectId(fly_id)}, {
-        'name': request.form.get('name'),
-        'species': request.form.get('species'),
-        'hook': request.form.get('hook'),
-        'thread': request.form.get('thread'),
-        'rib': request.form.get('rib'),
-        'head': request.form.get('head'),
-        'body': request.form.get('body'),
-        'thorax': request.form.get('thorax'),
-        'legs': request.form.get('legs'),
-        'wings': request.form.get('wings'),
-        'tail': request.form.get('tail'),
-        'hackle': request.form.get('hackle'),
-        'link': request.form.get('link'),
-        'submitted_by': request.form.get('submitted_by'),
-        'delete': True
-    })
-    return redirect(url_for('get_fly'))
-
-
-@app.route('/add_fly')
-def add_fly():
-    return render_template('addfly.html', fly=mongo.db.fly.find())
-
-
-@app.route('/insert_fly', methods=['POST'])
-def insert_fly():
-    fly = mongo.db.fly
-    fly.insert({
         'name': request.form.get('name'),
         'species': request.form.get('species'),
         'hook': request.form.get('hook'),

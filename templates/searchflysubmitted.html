@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+    <select id="search_fly_submitted" name="search_fly_submitted" required>
+        <option value="">--Search for Fly by Name --</option>
+        {% for fly in fly %}
+        <option value="{{fly.submitted_by}}">{{fly.submitted_by}}</option>
+        {% endfor %}
+    </select>
+    <label for="search_fly_submitted">Submitted By</label>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<select class="col-3" id="search_fly_name" name="fly_name" required>
+        <option value="">--Search for Fly by Name --</option>
+        {% for fly in fly %}
+        <option value="{{fly.name}}">{{fly.name}}</option>
+        {% endfor %}
+    </select>
+    <label for="search_fly_name">Fly Name</label>
+{% endblock %}
