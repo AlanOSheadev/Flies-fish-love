@@ -1,12 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div>
 <div class="row">
-    
-    <button class="col-4"><a class="btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
-    <button class="col-4"><a class="btn btn-success">Select fly by Name</a></button>
-    <button class="col-4"><a class="btn btn-success">Select fly by "Submitted By"</a></button>
-
-
+    <button class="col-4"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    <button class="col-4"><a class="nav-link btn btn-success">Select fly by Name</a></button>
+    <button class="col-4"><a class="nav-link btn btn-success">Select fly by "Submitted By"</a></button>
 </div>
 <ul class="card" id="accordion">
     {% for fly in fly %}

@@ -6,4 +6,45 @@
         {% endfor %}
     </select>
     <label for="search_fly_submitted">Submitted By</label>
+    <ul class="card" id="accordion">
+    {% for fly in fly %}
+    <li>
+        <div class="row list-inline align-self-center"> 
+            <div class="col-4 list-inline-item">
+                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
+            </div>
+            <div class="task_header col-4 list-inline-item">
+                <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
+            </div>
+            <div class="col">
+                <div>
+                {% if fly.delete %}
+                    <a href="{{url_for('edit_fly', fly_id=fly._id)}}" type="button" class="btn btn-primary">Edit</a>
+                    <a href="{{url_for('delete_fly', fly_id=fly._id)}}" type="button" class="btn btn-danger">Delete</a>
+                    {% else %}
+                {% endif %}  
+                </div>
+            </div>
+        </div>
+        <div class="collapse card card-body" id="collapseExample{{loop.index}}"> 
+            <span>
+                    Species : &nbsp;&nbsp;&ensp;{{fly.species}} <br>
+                    Hook Size : &nbsp;{{fly.hook}} <br>
+                    Thread : &ensp;&emsp;{{fly.thread}} <br>
+                    Rib : &ensp;&emsp;&emsp;&emsp;{{fly.rib}} <br>
+                    Head : &ensp;&emsp;&emsp;{{fly.head}} <br>
+                    Body : &ensp;&emsp;&emsp;{{fly.body}} <br>
+                    Thorax : &ensp;&nbsp;&emsp;{{fly.thorax}} <br>
+                    Legs : &nbsp;&ensp;&emsp;&emsp;{{fly.legs}} <br>
+                    Wings : &nbsp;&ensp;&emsp;{{fly.wings}} <br>
+                    Tail : &nbsp;&emsp;&emsp;&emsp;{{fly.tail}} <br>
+                    Hackle : &nbsp;&emsp;&nbsp;{{fly.hackle}} <br>
+                    Link to Instructions :  <a href="{{fly.link}}" target="blank">Link</a> <br>
+                    <br>
+                    Submitted By: {{fly.submitted_by}}
+                </span>
+        </div>
+    </li>    
+    {% endfor %}
+</ul>
 {% endblock %}
