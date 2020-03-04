@@ -7,14 +7,16 @@
     <div class="col-6 d-flex justify-content-center">
 				<div>
 					<form action="{{url_for('search_flyname')}}">
-					<input id="search" name="search" type="text" placeholder="Search fly by 'Name' and press enter" required>
+					<input id="search" name="search" type="text" required>
+                    <label for="search">Search fly by 'Name' and press enter</label>
                     </form>
 				</div>
 </div>
     <div class="col-6 d-flex justify-content-center">
 				<div>
 					<form action="{{url_for('search_flysubmitted')}}">
-					<input id="searchsub" name="searchsub" type="text" placeholder="Search fly by 'Submitted By' and press enter" required>
+					<input id="searchsub" name="searchsub" type="text" required>
+                    <label for="searchsub">Search fly by 'Submitted By' and press enter</label>
                     </form>
 				</div>
 </div>
