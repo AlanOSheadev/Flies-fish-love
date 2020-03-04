@@ -2,8 +2,14 @@
 <div class="hero"></div>
 <div class="row">
     <button class="col-4"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
-    <button class="col-4"><a class="nav-link btn btn-success">Select fly by Name</a></button>
-    <button class="col-4"><a class="nav-link btn btn-success">Select fly by "Submitted By"</a></button>
+    <div class="col-4 search-bar d-flex justify-content-center">
+				<div class="row search-outline search-outline-home">
+					<form action="{{url_for('search_flyname')}}">
+						<input id="search" name="search" type="text" class="validate home-search" placeholder="Search by name of Fly and press enter key" required>
+                    </form>
+				</div>
+</div>
+    <button class="col-4"><a class="nav-link btn btn-success" href="{{url_for('search_flysubmitted')}}">Select fly by "Submitted By"</a></button>
 </div>
 <ul class="card" id="accordion">
     {% for fly in fly %}

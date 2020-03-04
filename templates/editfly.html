@@ -1,108 +1,108 @@
 {% extends 'base.html' %} {% block content %}
-
-<h3>Please edit your fly. <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
-
 <div class="row">
-    <form action="{{ url_for('update_fly', fly_id=fly._id) }}" method="POST" class="col 12">
+<h3 class="justify-content-center col-12">Please edit this fly. <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+</div>
+<div class="row justify-content-center">
+    <form action="{{ url_for('update_fly', fly_id=fly._id) }}" method="POST" class="col-12">
         <div class="row">
-            <div class="input-field col 12"><i class="fa fa-upload" aria-hidden="true"></i>
+            <div class="input-field col-12"><i class="fa fa-upload" aria-hidden="true"></i>
                 <textarea type="text" name="name" id="name">{{fly.name}}</textarea>
                 <label>Fly Name</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-list"></i>
+            <div class="input-field col-12"> <i class="fa fa-list"></i>
                 <select id="species" name="species">
                     <option value="{{fly.species}}"></option>
                     {% for spec in species %} {% if spec.species == fly.species %}
                     <option value="{{spec.species}}" selected>{{spec.species}}</option>
                     {% else %}
-                    <option value="{{spec.species}}">{{spec.species}}</option>
+                    <option value="{{spec.species}}">{{fly.species}}</option>
                     {% endif %} {% endfor %}
                 </select>
                 <label>Fish Species</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-anchor" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-anchor" aria-hidden="true"></i>
                 <textarea type="text" name="hook" id="hook">{{fly.hook}}</textarea>
                 <label>Hook Size(s)</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-tint" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-tint" aria-hidden="true"></i>
                 <textarea type="text" name="thread" id="thread">{{fly.thread}}</textarea>
                 <label>Thread Colour</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"><i class="fa fa-bolt" aria-hidden="true"></i>
+            <div class="input-field col-12"><i class="fa fa-bolt" aria-hidden="true"></i>
                 <textarea type="text" name="rib" id="rib">{{fly.rib}}</textarea>
                 <label>Rib Used</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"><i class="fa fa-user-circle" aria-hidden="true"></i>
+            <div class="input-field col-12"><i class="fa fa-user-circle" aria-hidden="true"></i>
                 <textarea type="text" name="head" id="head">{{fly.head}}</textarea>
                 <label>Head Material</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-female" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-female" aria-hidden="true"></i>
                 <textarea type="text" name="body" id="body">{{fly.body}}</textarea>
                 <label>Body Material</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"><i class="fa fa-hourglass" aria-hidden="true"></i>
+            <div class="input-field col-12"><i class="fa fa-hourglass" aria-hidden="true"></i>
                 <textarea type="text" name="thorax" id="thorax">{{fly.thorax}}</textarea>
                 <label>Thorax Material</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"><i class="fa fa-check" aria-hidden="true"></i>
+            <div class="input-field col-12"><i class="fa fa-check" aria-hidden="true"></i>
                 <textarea type="text" name="legs" id="legs">{{fly.legs}}</textarea>
                 <label>Number of Legs</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-envira" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-envira" aria-hidden="true"></i>
                 <textarea type="text" name="hackle" id="hackle">{{fly.hackle}}</textarea>
                 <label>Hackle</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-xing" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-xing" aria-hidden="true"></i>
                 <textarea type="text" name="wings" id="wings">{{fly.wings}}</textarea>
                 <label>Wing Material</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-reply-all" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-reply-all" aria-hidden="true"></i>
                 <textarea type="text" name="tail" id="tail">{{fly.tail}}</textarea>
                 <label>Tail Material</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col 12"> <i class="fa fa-link" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-link" aria-hidden="true"></i>
                 <textarea type="text" name="link" id="link">{{fly.link}}</textarea>
                 <label>Link to Instructions</label>
             </div>
         </div>
-        <div>Submitted by: {{fly.submitted_by}}</div>
+        <div class="col-3 justify-content">Submitted by: {{fly.submitted_by}}</div>
         <div class="row" hidden>
-            <div class="input-field col 12"> <i class="fa fa-pencil" aria-hidden="true"></i>
+            <div class="input-field col-12"> <i class="fa fa-pencil" aria-hidden="true"></i>
                 <textarea type="text" name="submitted_by" id="submitted_by">{{fly.submitted_by}}</textarea>
                 <label>Submitted By</label>
             </div>
         </div>
         <div class="row" hidden>
-            <div class="input-field col 12">
+            <div class="input-field col-12">
                 <textarea type="text" name="delete" id="delete">{{fly.delete}}: True</textarea>
             </div>
         </div>
         <div class="row">
-            <button class="btn btn-success" type="submit" name="action">Submit Edit <i class="fa fa-plus"></i>
+            <button class="btn btn-success col-2" type="submit" name="action">Submit Edit <i class="fa fa-plus"></i>
             </button>
         </div>
     </form>

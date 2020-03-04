@@ -14,12 +14,14 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
+# ----------- Home Page --------------
 
 @app.route('/')
 @app.route('/get_fly')
 def get_fly():
     return render_template("fly.html", fly=mongo.db.fly.find().sort("name"))
 
+# ----------- Add Fly Page --------------
 
 @app.route('/add_fly')
 def add_fly():
@@ -29,10 +31,10 @@ def add_fly():
 @app.route('/insert_fly', methods=['POST'])
 def insert_fly():
     fly = mongo.db.fly
-    species = mongo.db.species
     fly.insert_one(request.form.to_dict())
     return redirect(url_for('get_fly'))
 
+# ----------- Edit Fly Page --------------
 
 @app.route('/edit_fly/<fly_id>')
 def edit_fly(fly_id):
@@ -64,20 +66,41 @@ def update_fly(fly_id):
     return redirect(url_for('get_fly'))
 
 
+# ----------- Delete Fly Page --------------
+
 @app.route('/delete_fly/<fly_id>')
 def delete_fly(fly_id):
     mongo.db.fly.remove({'_id': ObjectId(fly_id)})
     return redirect(url_for('get_fly'))
 
 
+# ----------- Privacy Page --------------
+
 @app.route('/add_privacy')
 def add_privacy():
     return render_template('privacy.html')
 
 
+# ----------- Contact Page --------------
+
 @app.route('/add_contact')
 def add_contact():
     return render_template('contact.html')
+
+
+# ----------- Search Fly by name Page --------------
+
+@app.route('/search_flyname', methods=['GET', 'POST'])
+def search_flyname():
+    fly=mongo.db.fly.find()
+    query = request.args.get('search')
+    results = mongo.db.fly.find({'name': {"$regex": query}})
+    return render_template('searchflyname.html', results=results)
+
+
+@app.route('/search_flysubmitted')
+def search_flysubmitted():
+    return render_template('searchflysubmitted.html', fly=mongo.db.fly.find())
 
 
 if __name__ == '__main__':
