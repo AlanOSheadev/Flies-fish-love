@@ -1,16 +1,24 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div>
 <div class="row">
-    <button class="col-4"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
-    <div class="col-4 d-flex justify-content-center">
+    <button class="col-12"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    </div>
+    <div class="row">
+    <div class="col-6 d-flex justify-content-center">
 				<div>
 					<form action="{{url_for('search_flyname')}}">
-						<button class="btn btn-success"><input id="search" name="search" type="text" class="" placeholder="Search by name of Fly and press enter key" required></button>
+					<input id="search" name="search" type="text" placeholder="Search fly by 'Name' and press enter" required>
                     </form>
 				</div>
 </div>
-    <button class="col-4"><a class="nav-link btn btn-success" href="{{url_for('search_flysubmitted')}}">Select fly by "Submitted By"</a></button>
+    <div class="col-6 d-flex justify-content-center">
+				<div>
+					<form action="{{url_for('search_flysubmitted')}}">
+					<input id="searchsub" name="searchsub" type="text" placeholder="Search fly by 'Submitted By' and press enter" required>
+                    </form>
+				</div>
 </div>
+    </div>
 <ul class="card" id="accordion">
     {% for fly in fly %}
     <li>

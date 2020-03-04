@@ -98,9 +98,12 @@ def search_flyname():
     return render_template('searchflyname.html', results=results)
 
 
-@app.route('/search_flysubmitted')
+@app.route('/search_flysubmited', methods=['GET', 'POST'])
 def search_flysubmitted():
-    return render_template('searchflysubmitted.html', fly=mongo.db.fly.find())
+    fly=mongo.db.fly.find()
+    query = request.args.get('searchsub')
+    results = mongo.db.fly.find({'submitted_by': {"$regex": query}}).sort('name')
+    return render_template('searchflysubmitted.html', results=results)
 
 
 if __name__ == '__main__':

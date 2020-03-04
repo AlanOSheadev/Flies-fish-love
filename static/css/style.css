@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700|Roboto:100,200,300,400,500,600,700|Sansita:100,200,300,400,500,600,700');
 
+/* -------------- Body ------------- */
+
 body {
     font-family: Montserrat, sans-serif;
     font-weight: 600;
@@ -9,11 +11,21 @@ body {
 body p {
     font-family: Sansista, sans-serif;
     font-weight: 500;
-    color: rgb(57, 68, 80)
+    color: rgb(57, 68, 80);
 }
+
+/* -------------- Container ------------- */
+
 .container-fluid {
     padding: 0;
 }
+
+.container, .container-md, .container-sm {
+    max-width: 100%;
+}
+
+/* -------------- Navigation ------------- */
+
 
 .navbar-dark .navbar-toggler {
     color: rgba(255,255,255,.5);
@@ -24,9 +36,13 @@ body p {
     color: #ffffff;
 }
 
+/* -------------- Lists ------------- */
+
 ul li {
   list-style-type: none;
 }
+
+/* -------------- Main Image ------------- */
 
 .hero {
 	text-align: center;
@@ -49,9 +65,7 @@ ul li {
 	z-index: -1;
 }
 
-.container, .container-md, .container-sm {
-    max-width: 100%;
-}
+/* -------------- Columns and Rows ------------- */
 
 .col {
     padding: 0;
@@ -62,7 +76,9 @@ ul li {
     margin: 0;
 }
 
- /* back to top button w3 schools and bootstrap */
+/* -------------- Back to Top Button ------------- */
+
+ /* back to top button found in w3 schools and bootstrap */
 
  #myBtn {
   display: none; /* Hidden by default */
@@ -83,3 +99,17 @@ ul li {
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
+
+/* -------------- Search------------- */
+
+::placeholder {
+    color: #ffffff;
+    font-size: .6em;
+    text-align: center;
+    background-color: rgb(57, 68, 80);
+
+}
+
+input:-moz-placeholder { 
+    text-overflow: ellipsis; 
+    }

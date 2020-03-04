@@ -1,9 +1,60 @@
 {% extends 'base.html' %} {% block content %}
-    <select id="search_fly_submitted" name="search_fly_submitted" required>
-        <option value="">-- Search for Submitted By --</option>
-        {% for fly in fly %}
-        <option value="{{fly.submitted_by}}">{{fly.submitted_by}}</option>
-        {% endfor %}
-    </select>
-    <label for="search_fly_submitted">Submitted By</label>
+<div class="search-bar d-flex justify-content-center">
+    <div class="row">
+        <form action="{{url_for('search_flysubmitted')}}" lower>
+            <input id="searchsub" name="searchsub" type="text" class="col-12"placeholder="Search fly by 'Submitted By' and press enter" required>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <ul class="card" id="accordion">
+
+            {% if results_number == 0 %}
+            <div class="col-12">
+                <a href="{{url_for('search_submitted')}}">
+                    <img src="{{url_for('static', filename='image/error.png')}}" width="100%" height="750px" alt="404">
+                </a>
+            </div>
+            {% else %} {% for result in results %}
+            <li>
+                <div class="row list-inline align-self-center">
+                    <div class="list-inline-item col-4">
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
+                    </div>
+                    <div class="task_header col-4 list-inline-item">
+                        <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{result.name}}</strong>
+                    </div>
+                    <div>
+                        <div>
+                            {% if result.delete %}
+                            <a href="{{url_for('edit_fly', fly_id=result._id)}}" type="button" class="btn btn-primary">Edit</a>
+                            <a href="{{url_for('delete_fly', fly_id=result._id)}}" type="button" class="btn btn-danger">Delete</a> {% else %} {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse card card-body col" id="collapseExample{{loop.index}}">
+                    <span>
+                    Species : &nbsp;&nbsp;&ensp;{{result.species}} <br>
+                    Hook Size : &nbsp;{{result.hook}} <br>
+                    Thread : &ensp;&emsp;{{result.thread}} <br>
+                    Rib : &ensp;&emsp;&emsp;&emsp;{{result.rib}} <br>
+                    Head : &ensp;&emsp;&emsp;{{result.head}} <br>
+                    Body : &ensp;&emsp;&emsp;{{result.body}} <br>
+                    Thorax : &ensp;&nbsp;&emsp;{{result.thorax}} <br>
+                    Legs : &nbsp;&ensp;&emsp;&emsp;{{result.legs}} <br>
+                    Wings : &nbsp;&ensp;&emsp;{{result.wings}} <br>
+                    Tail : &nbsp;&emsp;&emsp;&emsp;{{result.tail}} <br>
+                    Hackle : &nbsp;&emsp;&nbsp;{{result.hackle}} <br>
+                    Link to Instructions :  <a href="{{result.link}}" target="blank">Link</a> <br>
+                    <br>
+                    Submitted By: {{result.submitted_by}}
+                </span>
+                </div>
+            </li>
+            {% endfor %} {% endif %}
+
+        </ul>
+    </div>
+</div>
 {% endblock %}
