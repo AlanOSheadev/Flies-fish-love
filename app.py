@@ -94,7 +94,7 @@ def add_contact():
 def search_flyname():
     fly=mongo.db.fly.find()
     query = request.args.get('search')
-    results = mongo.db.fly.find({'name': {"$regex": query}})
+    results = mongo.db.fly.find({'name': {"$regex": query}}).sort('name')
     return render_template('searchflyname.html', results=results)
 
 
