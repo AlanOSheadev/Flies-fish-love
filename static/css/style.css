@@ -104,12 +104,9 @@ ul li {
 
 ::placeholder {
     color: #ffffff;
-    font-size: .6em;
+    font-size: 60%;
     text-align: center;
     background-color: rgb(57, 68, 80);
-
+    text-overflow: ellipsis;
 }
 
-input:-moz-placeholder { 
-    text-overflow: ellipsis; 
-    }
