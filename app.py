@@ -25,7 +25,7 @@ def get_fly():
     fly = mongo.db.fly.find().sort("name")
     pagination = Pagination(page=page, total=fly.count(),
                             per_page=per_page,
-                            search=False, record_name='flies',
+                            search=False, record_name='fly(flies)',
                             css_framework='bootstrap4', alignment='center')
     fly_page = fly.skip((page - 1) * per_page).limit(per_page)
     return render_template("fly.html", flies=fly_page,
@@ -131,7 +131,7 @@ def search_flysubmitted():
     fly = mongo.db.fly.find()
     pagination = Pagination(page=page, total=fly.count(),
                             per_page=per_page,
-                            search=False, record_name='flies',
+                            search=False, record_name='fly(flies)',
                             css_framework='bootstrap4', alignment='center')
     fly_page = fly.skip((page - 1) * per_page).limit(per_page)
     return render_template('searchflysubmitted.html',
