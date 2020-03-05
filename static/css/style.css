@@ -102,11 +102,5 @@ ul li {
 
 /* -------------- Search------------- */
 
-::placeholder {
-    color: #ffffff;
-    font-size: 60%;
-    text-align: center;
-    background-color: rgb(57, 68, 80);
-    text-overflow: ellipsis;
-}
+
 
