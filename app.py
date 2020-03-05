@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_paginate import Pagination, get_page_args
+from flask_paginate import Pagination, get_page_parameter
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -94,30 +94,19 @@ def add_contact():
 @app.route('/search_flyname', methods=['GET', 'POST'])
 def search_flyname():
     query = request.args.get('search')
-    results = mongo.db.fly.find({'name': { "$regex": query, "$options": 'i' }}).sort('name')
-    return render_template('searchflyname.html', results=results)
-
-
-# def get_flys(offset=0, per_page=8):
-#     fly = mongo.db.fly.find()
-#     print("herl")
-#     return fly[offset: offset + per_page]
-
-
-# @app.route('/here')
-# def showflys():
-#     page, per_page, offset = get_page_args(page_parameter='page',
-#                                            per_page_parameter='per_page')
-#     total = mongo.db.fly.find().count()
-#     paginatedflys = get_flys(offset=offset, per_page=per_page)
-#     pagination = Pagination(page=page, per_page=per_page, total=total,
-#                             css_framework='bootstrap4')
-#     return render_template('searchflyname.html',
-#                            flys=paginatedflys,
-#                            page=page,
-#                            per_page=per_page,
-#                            pagination=pagination,
-#                            )
+    results = mongo.db.fly.find({'name': { "$regex": query, "$options": 'i'}}).sort('name')
+    results_number = results.count()
+    per_page = 8
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    fly = mongo.db.fly.find()
+    pagination = Pagination(page=page, total=fly.count(),
+                            per_page=per_page,
+                            search=False, record_name='fly',
+                            css_framework='bootstrap4', alignment='center')
+    fly_page = fly.skip((page - 1) * per_page).limit(per_page)
+    return render_template('searchflyname.html', results=results, results_number=results_number, flys=fly_page,
+                           pagination=pagination,
+                           fly=mongo.db.fly.find())
 
 
 # ----------- Search Fly by Submitted By Page --------------
@@ -125,7 +114,7 @@ def search_flyname():
 @app.route('/search_flysubmited', methods=['GET', 'POST'])
 def search_flysubmitted():
     query = request.args.get('searchsub')
-    results = mongo.db.fly.find({'name': { "$regex": query, "$options": 'i' }}).sort('name')
+    results = mongo.db.fly.find({'name': { "$regex": query, "$options": 'i'}}).sort('name')
     return render_template('searchflysubmitted.html', results=results)
 
 

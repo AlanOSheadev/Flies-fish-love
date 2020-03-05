@@ -1,41 +1,43 @@
 {% extends 'base.html' %} {% block content %}
 <div class="search-bar d-flex justify-content-center">
-    <div class="row">
-        <form action="{{url_for('search_flyname')}}">
-            <input id="search" name="search" type="text" required >
-                    <label for="search">Search fly by 'Name' and press enter</label>
-        </form>
-    </div>
+	<div class="row">
+		<form action="{{url_for('search_flyname')}}">
+			<input id="search" name="search" type="text" required >
+			<label for="search">Search fly by 'Name' and press enter</label>
+		</form>
+	</div>
 </div>
 <div class="row">
-    <div class="col-12">
-        <ul class="card" id="accordion">
+	<div class="col-12">
+		<ul class="card" id="accordion">
 
-            {% if results_number == 0 %}
-            <div class="col-12">
-                <a href="{{url_for('search_flyname')}}">
-                    <img src="{{url_for('static', filename='image/error.png')}}" width="100%" height="750px" alt="404">
+			{% if results_number == 0 %}
+			<div class="col-12">
+				<a href="{{url_for('search_flyname')}}">
+					<img src="{{url_for('static', filename='image/error.png')}}" width="100%" height="750px" alt="404">
                 </a>
-            </div>
-            {% else %} {% for result in results %}
-            <li>
-                <div class="row list-inline align-self-center">
-                    <div class="list-inline-item col-4">
-                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
-                    </div>
-                    <div class="task_header col-4 list-inline-item">
-                        <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{result.name}}</strong>
-                    </div>
-                    <div>
-                        <div>
-                            {% if result.delete %}
-                            <a href="{{url_for('edit_fly', fly_id=result._id)}}" type="button" class="btn btn-primary">Edit</a>
-                            <a href="{{url_for('delete_fly', fly_id=result._id)}}" type="button" class="btn btn-danger">Delete</a> {% else %} {% endif %}
-                        </div>
-                    </div>
-                </div>
-                <div class="collapse card card-body col" id="collapseExample{{loop.index}}">
-                    <span>
+			</div>
+			{% else %} {% for result in results %}
+			<li>
+				<div class="row list-inline align-self-center">
+					<div class="list-inline-item col-4">
+						<button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
+					</div>
+					<div class="task_header col-4 list-inline-item">
+						<i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{result.name}}</strong>
+					</div>
+					<div>
+						<div>
+							{% if result.delete %}
+							<a href="{{url_for('edit_fly', fly_id=result._id)}}" type="button"
+								class="btn btn-primary">Edit</a>
+							<a href="{{url_for('delete_fly', fly_id=result._id)}}" type="button"
+								class="btn btn-danger">Delete</a> {% else %} {% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="collapse card card-body col" id="collapseExample{{loop.index}}">
+					<span>
                     Species : &nbsp;&nbsp;&ensp;{{result.species}} <br>
                     Hook Size : &nbsp;{{result.hook}} <br>
                     Thread : &ensp;&emsp;{{result.thread}} <br>
@@ -51,11 +53,13 @@
                     <br>
                     Submitted By: {{result.submitted_by}}
                 </span>
-                </div>
-            </li>
-            {% endfor %} {% endif %}
+				</div>
+			</li>
+			{% endfor %} {% endif %}
 
-        </ul>
-    </div>
+		</ul>
+	</div>
+
 </div>
+{{ pagination.links }}
 {% endblock %}
