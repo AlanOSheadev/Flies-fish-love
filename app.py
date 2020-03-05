@@ -20,7 +20,16 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_fly')
 def get_fly():
-    return render_template("fly.html", fly=mongo.db.fly.find().sort("name"))
+    per_page = 8
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    fly = mongo.db.fly.find().sort("name")
+    pagination = Pagination(page=page, total=fly.count(),
+                            per_page=per_page,
+                            search=False, record_name='flies',
+                            css_framework='bootstrap4', alignment='center')
+    fly_page = fly.skip((page - 1) * per_page).limit(per_page)
+    return render_template("fly.html", flies=fly_page,
+                           pagination=pagination)
 
 # ----------- Add Fly Page --------------
 
@@ -101,14 +110,13 @@ def search_flyname():
     fly = mongo.db.fly.find()
     pagination = Pagination(page=page, total=fly.count(),
                             per_page=per_page,
-                            search=False, record_name='fly',
+                            search=False, record_name='fly(flies)',
                             css_framework='bootstrap4', alignment='center')
     fly_page = fly.skip((page - 1) * per_page).limit(per_page)
-    return render_template('searchflyname.html', results=results,
+    return render_template('searchflyname.html',
                            results_number=results_number,
-                           flys=fly_page,
-                           pagination=pagination,
-                           fly=mongo.db.fly.find())
+                           results=fly_page,
+                           pagination=pagination)
 
 
 # ----------- Search Fly by Submitted By Page --------------
@@ -123,14 +131,13 @@ def search_flysubmitted():
     fly = mongo.db.fly.find()
     pagination = Pagination(page=page, total=fly.count(),
                             per_page=per_page,
-                            search=False, record_name='fly',
+                            search=False, record_name='flies',
                             css_framework='bootstrap4', alignment='center')
     fly_page = fly.skip((page - 1) * per_page).limit(per_page)
-    return render_template('searchflysubmitted.html', results=results,
+    return render_template('searchflysubmitted.html',
                            results_number=results_number,
-                           flys=fly_page,
-                           pagination=pagination,
-                           fly=mongo.db.fly.find())
+                           results=fly_page,
+                           pagination=pagination)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div>
+
     <div class="row">
     <button class="col d-flex justify-content-center"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
     </div>
@@ -22,7 +23,8 @@
 </div>
     </div>
 <ul class="card" id="accordion">
-    {% for fly in fly %}
+  {{ pagination.info }}
+    {% for fly in flies %}
     <li>
         <div class="row list-inline align-self-center"> 
             <div class="col-4 list-inline-item">
@@ -61,6 +63,7 @@
         </div>
     </li>    
     {% endfor %}
+    {{ pagination.links }}
 </ul>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}
