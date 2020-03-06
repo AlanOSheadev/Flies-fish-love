@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div><br>
 <!-- Add a new fly to the database -->
-<div>
+<div class="space">
     <button class="col-12 d-flex justify-content-center"><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
 </div>
 <br>
 <!-- Search for fly using Name -->
-<div class="row space">
+<div class="row">
     <div class="col-6 d-flex justify-content-center">
         <div>
             <form action="{{url_for('search_flyname')}}">
