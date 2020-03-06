@@ -1,10 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div><br>
-<!-- Add a new fly to the database -->
-<div class="space">
-    <button class="col-12 d-flex justify-content-center"><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
-</div>
-<br>
 <!-- Search for fly using Name -->
 <div class="row d-flex justify-content-center">
     <div class="col-6">
@@ -27,6 +22,9 @@
 </div>
 <!-- Present the Flies listed in the database alphabetically and with the option to Edit or Delete them in pages of 8 Flies -->
 <ul class="card" id="accordion">
+<!-- Add a new fly to the database -->
+    <button class="col-12 d-flex justify-content-center"><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+<br>
     {{ pagination.info }} {% for fly in flies %}
     <li>
         <div class="row list-inline align-self-center">

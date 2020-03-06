@@ -19,7 +19,7 @@ The app is designed to get the visitor to think about what flies the have, and w
 The page is made to make the visitor want to tie a fly and go fishing with a large 'Hero' image and the relevant information pertaining to each fly and how to make it below.  The site is paginated to that the visitor is not overwhelmed.  I added a search by fly name and a search by submitted by.  Some people will want to search by those who have submitted the fly as fly tying could be considered an artform with different artists haveing a better reputation.
 
 ### Skeleton
-1. Landing page wireframe(https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/landingpage.png)
+1. [Landing page wireframe](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/landingpage.png)
 2. [Add/Edit page wireframe](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/addeditpage.png)
 3. [Contact page wireframe](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/contact.png)
 4. [Privacy page wireframe](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/privacy.png)

@@ -26,6 +26,9 @@ body p {
 .container, .container-md, .container-sm {
     max-width: 100%;
 }
+.card {
+    padding: 0;
+}
 
 /* -------------- Navigation ------------- */
 
