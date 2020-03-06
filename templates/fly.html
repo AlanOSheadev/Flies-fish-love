@@ -1,49 +1,51 @@
 {% extends 'base.html' %} {% block content %}
 <div class="hero"></div>
-
-    <div class="row">
+<!-- Add a new fly to the database -->
+<div class="row">
     <button class="col d-flex justify-content-center"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
-    </div>
-    <div class="row">
-    <div class="col-6 d-flex justify-content-center">
-				<div>
-					<form action="{{url_for('search_flyname')}}">
-					<input id="search" name="search" type="text" required>
-                    <label for="search">Search fly by 'Name' and press enter</label>
-                    </form>
-				</div>
 </div>
+<!-- Search for fly using Name -->
+<div class="row">
     <div class="col-6 d-flex justify-content-center">
-				<div>
-					<form action="{{url_for('search_flysubmitted')}}">
-					<input id="searchsub" name="searchsub" type="text" required>
-                    <label for="searchsub">Search fly by 'Submitted By' and press enter</label>
-                    </form>
-				</div>
-</div>
+        <div>
+            <form action="{{url_for('search_flyname')}}">
+                <input id="search" name="search" type="text" required>
+                <label for="search">Search fly by 'Name' and press enter</label>
+            </form>
+        </div>
     </div>
+<!-- Search for fly using Submitted By     -->
+    <div class="col-6 d-flex justify-content-center">
+        <div>
+            <form action="{{url_for('search_flysubmitted')}}">
+                <input id="searchsub" name="searchsub" type="text" required>
+                <label for="searchsub">Search fly by 'Submitted By' and press enter</label>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Present the Flies listed in the database alphabetically and with the option to Edit or Delete them in pages of 8 Flies -->
 <ul class="card" id="accordion">
-  {{ pagination.info }}
-    {% for fly in flies %}
+    {{ pagination.info }} {% for fly in flies %}
     <li>
-        <div class="row list-inline align-self-center"> 
+        <div class="row list-inline align-self-center">
             <div class="col-4 list-inline-item">
                 <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
             </div>
             <div class="task_header col-4 list-inline-item">
-                <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong><p>{{fly.submitted_by}}</p>
+                <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
+                <p>{{fly.submitted_by}}</p>
             </div>
             <div class="col">
                 <div>
-                {% if fly.delete %}
+                    {% if fly.delete %}
                     <a href="{{url_for('edit_fly', fly_id=fly._id)}}" type="button" class="btn btn-primary">Edit</a>
-                    <a href="{{url_for('delete_fly', fly_id=fly._id)}}" type="button" class="btn btn-danger">Delete</a>
-                    {% else %}
-                {% endif %}  
+                    <a href="{{url_for('delete_fly', fly_id=fly._id)}}" type="button" class="btn btn-danger">Delete</a> {% else %} {% endif %}
                 </div>
             </div>
         </div>
-        <div class="collapse card card-body" id="collapseExample{{loop.index}}"> 
+<!-- Keeping the ingredients for each fly in a drop down menu to enchance the UX -->
+        <div class="collapse card card-body" id="collapseExample{{loop.index}}">
             <span>
                     Species : &nbsp;&nbsp;&ensp;{{fly.species}} <br>
                     Hook Size : &nbsp;{{fly.hook}} <br>
@@ -61,9 +63,8 @@
                     Submitted By: {{fly.submitted_by}}
                 </span>
         </div>
-    </li>    
-    {% endfor %}
-    {{ pagination.links }}
+    </li>
+    {% endfor %} {{ pagination.links }}
 </ul>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="row">
-<h3 class="justify-content-center col-12">Please edit this fly. <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <h3 class="justify-content-center col-12">Please edit this fly. <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
 </div>
 <div class="row justify-content-center">
     <form action="{{ url_for('update_fly', fly_id=fly._id) }}" method="POST" class="col-12">
@@ -11,7 +11,7 @@
                 <label>Fly Name</label>
             </div>
         </div>
-       <div class="row">
+        <div class="row">
             <div class="input-field col-1"> <i class="fa fa-list"></i></div>
             <div class="col-11">
                 <select id="species" name="species" required>
