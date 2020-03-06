@@ -38,6 +38,9 @@ The page is made to make the visitor want to tie a fly and go fishing with a lar
 3. [Contact page wireframe](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/contact.png)
 4. [Privacy page wireframe](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/privacy.png)
 
+### Surface
+The colours were chosen to contrast easily and make it easier for the visitor to locate them and understand their purpose.  They are different from the sponsors colours to make a distinction between the sponsors site and this app.
+
 ### Features
 
 ### Existing Features:
@@ -67,6 +70,54 @@ I would like to add a login to the page so that contributors can only edit and d
 A cookie bar would make the app fully legal but since no data except for what the visitor inserts into the database is being taken right now it is not necessary.
 
 I would like to add facebook pixel so that I can retarget those visiting the site with products that may interest them.
+
+I may decide to change the colours of the app to match those of the sponsors site I will await user feedback and decide then.
+
+[Back to Top](#summary)
+
+### Database
+
+This app uses [MongoDB](https://www.mongodb.com/) this is a NoSQL database or a document based database. I used the following data types when creating the database
+1. Object id to identify each fly individually
+2. Strings such as name, thread, submitted by etc to collect the relevant information for each fly
+3. Boolean for the delete button which allows me to pick which flies can be edited and deleted, by setting the delete to null I can stop these actions.
+
+### Technologies
+
+1. HTML5        To set up the basic structure of the pages.
+2. CSS3         To add styling to the app.
+3. Bootstrap    Makes it easy to implement structures within the pages of the app and allows them to be responsive eg for mobile phones
+4. JQuery       Required in conjunction with Javascript to enable the email to function properly which also utilized email.js       
+5. Flask        Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions
+6. MongoDB      MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema. MongoDB is developed by MongoDB Inc.
+7. Heroku       Heroku is a cloud platform as a service supporting several programming languages. I am using Heroku to deploy the app.
+
+[Back to Top](#summary)
+
+### Testing
+Extensive manual testing was carried out on this app.  It was tested in Chrome, Firefox and Edge the app did not load properly in Edge and therefore did not function as expected but in Chrome and Firefox all areas functioned as expected.  The nav bar buttons top and bottom bring the user to the correct page whether that is inside the app or to a new page in the case of the social media and buy buttons.  The drop down for the contents and the edit and delete buttons functioned as expected as did the add new fly button.  The contact us page sends an email and the privacy page displays as expeced.
+
+Responsiveness:  The site was tested on multiple devices (iPhone 4, 5/SE,6,7,8 iPhone 6,7,8 plus, iPhone X : Chrome and Safari, iPad, iPad Pro,Samsung Galaxy Slll,5S)  and was shown to load an respond as expeced with all the buttons being visible and functioning in accordance with expectations 
+
+Create:  The add fly button effectively creates a new entry into the database.  Some fields such as Name, Hook Size and Thread were made required so that only after they have been filled in the fly will be added to the database.  The fields are not case sensitive and at present will allow duplication, this is inline with expectations.
+
+Read:  The fly name and submitted by are immediately visible on the page the rest of the components required including links if any are included in the drop down menu, this is so as not to over crowd the page with information. This is as expected.
+
+Update:  Most of the flys have the option to be updated through the edit button on clicking edit the user is brought to a new page where all the enteries except for 'Submitted by' and 'Delete' can be changed.  Only I can change the submitted by and delete infomation and this is as expected.
+
+Delete:  If a fly has the option to be deleted by the presence of the red delete button it will dissapear from the page and the database when this button is clicked, this is what is expected.
+
+The search buttons are not case sensitive and will search even with a partial or even just a letter as an input.  If you enter 'a' in the Search fly by name button any fly with the letter 'a' in it's name will load in a seperate page, the same is true for the Search by Submitted by search box.  This is what is expected.
+
+The home page and search pages are paginated.  When there are more than 8 flies in the database the landing page displays them in pages of 8 with a number counter telling the visitor how many flies are being displayed and how many there are in total.  The seach pages are also paginated and will display the flies in groups of 8 per page.  The search pages do not have a counter in them.  This is as expected.
+
+To validate my code I used the dev tools to examine each page and then run them through appropriate validators as follows I also beautified the code using online beautifiers.
+
+HTML code is validated through W3 validator.
+
+CSS code is validated through W3 validator.
+
+Python code is validated through [PEP8](http://pep8online.com/).
 
 [Back to Top](#summary)
 
