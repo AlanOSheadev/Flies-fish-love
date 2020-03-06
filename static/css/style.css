@@ -79,6 +79,10 @@ ul li {
     margin: 0;
 }
 
+.space {
+    margin-top: 10px;
+}
+
 /* -------------- Button ------------- */
 
 .btn {
