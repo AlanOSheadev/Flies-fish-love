@@ -14,7 +14,7 @@
             {% if results_number == 0 %}
             <div class="col-12">
                 <a href="{{url_for('search_flysubmitted')}}">
-                    <img src="{{url_for('static', filename='image/error.png')}}" width="60%" height="750px" alt="404">
+                    <img src="{{url_for('static', filename='images/error.png')}}" width="60%" height="750px" alt="404">
                 </a>
             </div>
             {% else %} {% for result in results %}
