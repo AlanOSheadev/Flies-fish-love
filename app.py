@@ -49,7 +49,7 @@ def insert_fly():
 @app.route('/edit_fly/<fly_id>')
 def edit_fly(fly_id):
     the_fly = mongo.db.fly.find_one({'_id': ObjectId(fly_id)})
-    species = mongo.db.species.find()
+    species = mongo.db.species.find().sort("species")
     return render_template('editfly.html', fly=the_fly, species=species)
 
 
