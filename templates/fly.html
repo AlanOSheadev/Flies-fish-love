@@ -6,8 +6,8 @@
 </div>
 <br>
 <!-- Search for fly using Name -->
-<div class="row">
-    <div class="col-6 d-flex justify-content-center">
+<div class="row d-flex justify-content-center">
+    <div class="col-6">
         <div>
             <form action="{{url_for('search_flyname')}}">
                 <input id="search" name="search" type="text" required>
@@ -16,7 +16,7 @@
         </div>
     </div>
 <!-- Search for fly using Submitted By     -->
-    <div class="col-6 d-flex justify-content-center">
+    <div class="col-6">
         <div>
             <form action="{{url_for('search_flysubmitted')}}">
                 <input id="searchsub" name="searchsub" type="text" required>
