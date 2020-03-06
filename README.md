@@ -9,6 +9,8 @@ This app allows the visitor to look at the different components which are needed
 [![Responsive Design](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/Iamresponsive.png "Responsive Design")](https://flies-fish-love.herokuapp.com/)
 </p>
 
+### Summary
+
 ### UX
 
 User expectations:
@@ -26,6 +28,8 @@ The app is designed to get the visitor to think about what flies the have, and w
 ### Structure
 
 The page is made to make the visitor want to tie a fly and go fishing with a large 'Hero' image and the relevant information pertaining to each fly and how to make it below.  The site is paginated to that the visitor is not overwhelmed.  I added a search by fly name and a search by submitted by.  Some people will want to search by those who have submitted the fly as fly tying could be considered an artform with different artists haveing a better reputation.
+
+[Back to Top](#summary)
 
 ### Skeleton
 
@@ -51,3 +55,18 @@ The Add Fly button is highlighted in green and is in the middle of the page this
 All the flies in the database are then listed they are paginate into pages of 8 flies so as not to overload the page,  they have a dropdown menu which contains all the components of each fly, the name of the fly, and options to edit or delete flies.(Read, Update and Delete) I have purposfully prevented some flies from being edited or deleted, I don't want anyone to accidentally or purposefully delete or edit all the entries.
 
 The bottom navigation bar has the same home button as the top and will return the visitor home from any page,  it also has a privacy page, it is marked with a legal scales icon, which is a step towards making the app a legal page. There are several links to social media sites which are marked by their brand icons and all of these will take the visitor to a social media page owned by the sponsor Rodfendr.  Finally there is a buy button as in the top bar for Rodfendr Pro again marked with an orange credit card logo to draw the visitors attention and encourage them to visit the sponsors website.
+
+I did include a back to top button but when I added pagination this was no longer needed.  Pagination has helped not to clutter the page with too much information and for now I have chosen to limit the number to 8 flies per page.
+
+[Back to Top](#summary)
+
+### Future Features
+
+I would like to add a login to the page so that contributors can only edit and delete their own contrubutions to the database.  
+
+A cookie bar would make the app fully legal but since no data except for what the visitor inserts into the database is being taken right now it is not necessary.
+
+I would like to add facebook pixel so that I can retarget those visiting the site with products that may interest them.
+
+[Back to Top](#summary)
+
