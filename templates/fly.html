@@ -24,7 +24,7 @@
 <ul class="card" id="accordion">
 <!-- Add a new fly to the database -->
     <div class="col-12 d-flex justify-content-center">
-    <button ><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    <button class="btn btn-success"><a href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
     </div>
 <br>
     {{ pagination.info }} {% for fly in flies %}

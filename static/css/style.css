@@ -94,6 +94,10 @@ ul li {
     padding: 5px;
 }
 
+.btn a {
+    color: #ffffff;
+}
+
 .btn-success {
     margin: 15px;
     padding: 10px;
