@@ -5,17 +5,32 @@
 ### What is the purpose if this App?
 
 This app allows the visitor to look at the different components which are needed to make some of the best fishing flies.  Each fly is named and a full list of materials needed is given in a drop-down menu as well as a link to detailed instructions.  The person who submitted the description is also included as some people are fly making artists of some renown.  There is a search funtion with which the user can search for a fly by name or if they wish they can search by the person who submitted the fly. Click on the image to go to the live app.
-<p align="center">
+
 [![Responsive Design](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/Iamresponsive.png "Responsive Design")](https://flies-fish-love.herokuapp.com/)
-</p>
 
 ### Summary
+
+* [UX](#ux)
+* [Strategy](#strategy)
+* [Scope](#scope)
+* [Structure](#structure)
+* [Skeleton](#skeleton)
+* [Surface](#surface)
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Future Features](#future-features)
+* [Database](#database)
+* [Technologies](#technologies)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Media](#media)
+* [Credits](#credits)
 
 ### UX
 
 User expectations:
 
-A visitor to the app will expect to see a well themed app with relevant information.  This app has the potential to hold a lot of information for that reason I decided to add pagination.  I have limited my pages to 8 flies so that the visitor is not overwhelmed by too much information.  The hero image is also selected to remind the visitor of that precious moment when a fish takes your fly.  In this way I hope that they will feel encouraged to interact more with the app and to even click on the link to the sponsors page and make a purchase.
+A visitor to the app will expect to see a well themed app with relevant information.  This app has the potential to hold a lot of information for that reason I decided to add pagination.  I have limited my pages to 8 flies so that the visitor is not overwhelmed by too much information.  The hero image is also selected to remind the visitor of that precious moment when a fish takes your fly.  In this way I hope that they will feel encouraged to interact more with the app and to even click on the link to the sponsors page and make a purchase.  I sent the app link to several fly fishermen and fly tiers and the feedback was that it was a nice app and would be very useful.
 
 ### Strategy
 
@@ -41,7 +56,7 @@ The page is made to make the visitor want to tie a fly and go fishing with a lar
 ### Surface
 The colours were chosen to contrast easily and make it easier for the visitor to locate them and understand their purpose.  They are different from the sponsors colours to make a distinction between the sponsors site and this app.
 
-### Features
+## Features
 
 ### Existing Features:
 
