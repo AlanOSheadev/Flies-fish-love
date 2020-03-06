@@ -15,6 +15,8 @@ body p {
     color: rgb(57, 68, 80);
 }
 
+
+
 /* -------------- Container ------------- */
 
 .container-fluid {
@@ -56,7 +58,7 @@ ul li {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 60vh;
+	height: 75vh;
 	transition: all .5s ease-in-out;
 	-moz-transition: all .5s ease-in-out;
 	-webkit-transition: all .5s ease-in-out;
