@@ -23,7 +23,9 @@
 <!-- Present the Flies listed in the database alphabetically and with the option to Edit or Delete them in pages of 8 Flies -->
 <ul class="card" id="accordion">
 <!-- Add a new fly to the database -->
-    <button class="col-12 d-flex justify-content-center"><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    <div class="col-12 d-flex justify-content-center">
+    <button ><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    </div>
 <br>
     {{ pagination.info }} {% for fly in flies %}
     <li>
