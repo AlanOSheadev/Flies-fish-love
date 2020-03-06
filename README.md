@@ -110,6 +110,7 @@ This app uses [MongoDB](https://www.mongodb.com/) this is a NoSQL database or a 
 [Back to Top](#summary)
 
 ### Testing
+
 Extensive manual testing was carried out on this app.  It was tested in Chrome, Firefox and Edge the app did not load properly in Edge and therefore did not function as expected but in Chrome and Firefox all areas functioned as expected.  The nav bar buttons top and bottom bring the user to the correct page whether that is inside the app or to a new page in the case of the social media and buy buttons.  The drop down for the contents and the edit and delete buttons functioned as expected as did the add new fly button.  The contact us page sends an email and the privacy page displays as expeced.
 
 Responsiveness:  The site was tested on multiple devices (iPhone 4, 5/SE,6,7,8 iPhone 6,7,8 plus, iPhone X : Chrome and Safari, iPad, iPad Pro,Samsung Galaxy Slll,5S)  and was shown to load an respond as expeced with all the buttons being visible and functioning in accordance with expectations 
@@ -125,6 +126,7 @@ Delete:  If a fly has the option to be deleted by the presence of the red delete
 The search buttons are not case sensitive and will search even with a partial or even just a letter as an input.  If you enter 'a' in the Search fly by name button any fly with the letter 'a' in it's name will load in a seperate page, the same is true for the Search by Submitted by search box.  This is what is expected. 
 
 If a user enters a search value that is not part of the database an error page will pop up to tell them to resubmit another search.  This is what was expected
+[Error page message](https://raw.githubusercontent.com/AlanOSheadev/Flies-fish-love/master/static/images/error.png "Error Page message")
 
 The home page and search pages are paginated.  When there are more than 8 flies in the database the landing page displays them in pages of 8 with a number counter telling the visitor how many flies are being displayed and how many there are in total.  The seach pages are also paginated and will display the flies in groups of 8 per page.  The search pages do not have a counter in them.  This is as expected.
 
@@ -139,7 +141,6 @@ CSS code is validated through W3 validator.
 Python code is validated through [PEP8](http://pep8online.com/).
 
 [Back to Top](#summary)
-
 
 ### Deployment
 The app was written and debeloped on Gitpod and was regularly comitted and pushed to Github and Heroku.
