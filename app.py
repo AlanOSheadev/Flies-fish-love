@@ -17,6 +17,7 @@ mongo = PyMongo(app)
 
 # ----------- Home Page --------------
 
+
 @app.route('/')
 @app.route('/get_fly')
 def get_fly():
@@ -33,9 +34,11 @@ def get_fly():
 
 # ----------- Add Fly Page --------------
 
+
 @app.route('/add_fly')
 def add_fly():
-    return render_template('addfly.html', fly=mongo.db.fly.find(), allignment='center')
+    return render_template('addfly.html',
+                           fly=mongo.db.fly.find(), allignment='center')
 
 
 @app.route('/insert_fly', methods=['POST'])
@@ -45,6 +48,7 @@ def insert_fly():
     return redirect(url_for('get_fly'))
 
 # ----------- Edit Fly Page --------------
+
 
 @app.route('/edit_fly/<fly_id>')
 def edit_fly(fly_id):
@@ -103,7 +107,8 @@ def add_contact():
 @app.route('/search_flyname', methods=['GET', 'POST'])
 def search_flyname():
     query = request.args.get('search')
-    results = mongo.db.fly.find({'name': {"$regex": query, "$options": 'i'}}).sort('name')
+    results = mongo.db.fly.find({'name': {"$regex": query,
+                                          "$options": 'i'}}).sort('name')
     results_number = results.count()
     per_page = 8
     page = request.args.get(get_page_parameter(), type=int, default=1)
@@ -124,7 +129,9 @@ def search_flyname():
 @app.route('/search_flysubmited', methods=['GET', 'POST'])
 def search_flysubmitted():
     query = request.args.get('searchsub')
-    results = mongo.db.fly.find({'submitted_by': {"$regex": query, "$options": 'i'}}).sort('name')
+    results = mongo.db.fly.find({'submitted_by': {"$regex": query,
+                                                  "$options": 'i'}}
+                                ).sort('name')
     results_number = results.count()
     per_page = 8
     page = request.args.get(get_page_parameter(), type=int, default=1)
@@ -140,6 +147,9 @@ def search_flysubmitted():
                            pagination=pagination)
 
 
+# remember to ch ange to false before final push to Heroku
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')), debug=False)  # remember to change to false before final push to Heroku
+            port=int(os.environ.get('PORT')), debug=False)
