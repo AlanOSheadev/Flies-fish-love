@@ -2,7 +2,7 @@
 <div class="hero"></div>
 <!-- Add a new fly to the database -->
 <div class="row">
-    <button class="col-12 d-flex justify-content-center"><a class="nav-link btn btn-success" href="{{url_for('add_fly')}}"> Add a <span style="color: orange">NEW</span> Fly </a></button>
+    <button class="col-12 d-flex justify-content-center"><a href="{{url_for('add_fly')}}" class=" nav-link btn btn-success"> Add a <span style="color: orange">NEW</span> Fly </a></button>
 </div>
 <br>
 <!-- Search for fly using Name -->
@@ -31,7 +31,7 @@
     <li>
         <div class="row list-inline align-self-center">
             <div class="col-4 list-inline-item">
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
+                <button class="btn btn-info" data-toggle="collapse" data-target="#collapseExample{{loop.index}}" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Click to see components</button>
             </div>
             <div class="task_header col-4 list-inline-item">
                 <i class="fa fa-bug" aria-hidden="true"></i> Name of Fly :<strong> {{fly.name}}</strong>
