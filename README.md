@@ -113,6 +113,8 @@ This app uses [MongoDB](https://www.mongodb.com/) this is a NoSQL database or a 
 
 Extensive manual testing was carried out on this app.  It was tested in Chrome, Firefox and Edge the app did not load properly in Edge and therefore did not function as expected but in Chrome and Firefox all areas functioned as expected.  The nav bar buttons top and bottom bring the user to the correct page whether that is inside the app or to a new page in the case of the social media and buy buttons.  The drop down for the contents and the edit and delete buttons functioned as expected as did the add new fly button.  The contact us page sends an email and the privacy page displays as expeced.
 
+[Link to some screenshots of testing](https://drive.google.com/drive/folders/1cWNedjMQ3PXY46fiiigJ-YNp7qzmITsn?usp=sharing)
+
 Responsiveness:  The site was tested on multiple devices (iPhone 4, 5/SE,6,7,8 iPhone 6,7,8 plus, iPhone X : Chrome and Safari, iPad, iPad Pro,Samsung Galaxy Slll,5S)  and was shown to load an respond as expeced with all the buttons being visible and functioning in accordance with expectations 
 
 Create:  The add fly button effectively creates a new entry into the database.  Some fields such as Name, Hook Size and Thread were made required so that only after they have been filled in the fly will be added to the database.  The fields are not case sensitive and at present will allow duplication, this is inline with expectations.
@@ -130,7 +132,7 @@ If a user enters a search value that is not part of the database an error page w
 
 The home page and search pages are paginated.  When there are more than 8 flies in the database the landing page displays them in pages of 8 with a number counter telling the visitor how many flies are being displayed and how many there are in total.  The seach pages are also paginated and will display the flies in groups of 8 per page.  The search pages do not have a counter in them.  This is as expected.
 
-I sent the Heroku link to fly fishermen and fly tiers and the feedback was that the app looks well and was seen as being very useful.  
+I sent the Heroku link to fly fishermen and fly tiers and the feedback was that the app looks well and was seen as being very useful. They suggested that for mobile phones I should increase the size of the Link on the drop down menu on the home page as it could be hard to see otherwise.  This was adjusted and is now in line with expectations.  
 
 To validate my code I used the dev tools to examine each page and then run them through appropriate validators as follows I also beautified the code using online beautifiers.
 
@@ -157,7 +159,7 @@ pip3 install bson
 
 pip3 freeze --local > requirements.tx
 
-echo web: python app.py > Procfile
+echo web: python app. py > Procfile
 
 The app uses MongoDB and there is a URI needed to run MongoDB,  this is a secret password and as such has been placed into a file which was then added to a gitignore file.  This was done to protect the password as it should not appear on Github, if it did then anyone could copy and use my URI  
 
