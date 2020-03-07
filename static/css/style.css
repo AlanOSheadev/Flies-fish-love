@@ -103,3 +103,10 @@ ul li {
     padding: 10px;
     border-radius: 0;
 }
+
+/* -------------- Link ------------- */
+
+span a {
+    color: #5439a0;
+    font-size: 150%;
+}

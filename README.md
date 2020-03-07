@@ -143,7 +143,7 @@ Python code is validated through [PEP8](http://pep8online.com/).
 [Back to Top](#summary)
 
 ### Deployment
-The app was written and debeloped on Gitpod and was regularly comitted and pushed to Github and Heroku.
+The app was written and developed on Gitpod and was regularly comitted and pushed to Github and Heroku.
 
 To deploy properly the following are required to be installed using the pip3 install command as follows.
 
@@ -161,12 +161,12 @@ echo web: python app.py > Procfile
 
 The app uses MongoDB and there is a URI needed to run MongoDB,  this is a secret password and as such has been placed into a file which was then added to a gitignore file.  This was done to protect the password as it should not appear on Github, if it did then anyone could copy and use my URI  
 
-Heroku required that some variable are set up in order to deploy the app.  In this case the IP was set to 0.0.0.0 the PORT was set to 5000 and the MongoDB URI was also added.  In order to send the app to Heroku I first had to login to Heroku through the Gitpod IDE and then push all the commits to Heroku so any changes could be added to the app, on the last few pushes the Debug was set to False
+Heroku required that some variables are set up in order to deploy the app.  In this case the IP was set to 0.0.0.0 the PORT was set to 5000 and the MongoDB URI was also added.  In order to send the app to Heroku I first had to login into Heroku through the Gitpod IDE and then push all the commits to Heroku so any changes could be added to the app, on the last few pushes the Debug was set to False
 
 [Back to Top](#summary)
 
 ### Media 
-The photos on the app are mine.
+The  backend photos on the app are mine. People are free to add their own links to the app.
 
 ### Credits
 
