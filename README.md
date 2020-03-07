@@ -136,9 +136,11 @@ I sent the Heroku link to fly fishermen and fly tiers and the feedback was that 
  
 To validate my code I used the dev tools to examine each page and then run them through appropriate validators as follows I also beautified the code using online beautifiers.
  
-HTML code is validated through W3 validator.
+HTML code is validated through [W3C Markup validator](https://validator.w3.org/)
  
-CSS code is validated through W3 validator.
+CSS code is validated through [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
+
+Javascript code is validated through [JSHint](https://jshint.com/)
  
 Python code is validated through [PEP8](http://pep8online.com/).
  
