@@ -3,7 +3,7 @@
     <h3 class="justify-content-center col-12">Please edit this fly. <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
 </div>
 <div class="row justify-content-center">
-    <form action="{{ url_for('update_fly', fly_id=fly._id) }}" method="POST" class="col-12">
+    <form action="{{ url_for('update_fly', fly_id=fly._id) }}" method="POST" class="col-8">
         <div class="row">
             <div class="input-field col-1"><i class="fa fa-upload" aria-hidden="true"></i></div>
             <div class="col_11">
@@ -96,13 +96,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col-1"> <i class="fa fa-file-image-o" aria-hidden="true"></i></div>
-            <div class="col_11">
-                <textarea name="image" id="image">{{fly.image}}</textarea>
-                <label>Image of fly</label>
-            </div>
-        </div>
-        <div class="row">
             <div class="input-field col-1"> <i class="fa fa-link" aria-hidden="true"></i></div>
             <div class="col_11">
                 <textarea name="link" id="link">{{fly.link}}</textarea>
@@ -126,7 +119,9 @@
             </button>
         </div>
     </form>
+    <div class="col-4"><a href="{{fly.image}}"></a></div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="test/javascript"></script>
 {% endblock %}
